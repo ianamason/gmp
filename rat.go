@@ -48,6 +48,12 @@ type Rat struct {
 	init bool
 }
 
+//iam: for passing in to yices for testing
+func Get_mpq(q *Rat)  *C.mpq_t {
+	return &q.i
+}
+
+
 // Finalizer - release the memory allocated to the mpz
 func ratFinalize(z *Rat) {
 	if z.init {

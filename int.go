@@ -64,6 +64,11 @@ type Int struct {
 	init bool
 }
 
+//iam: for passing in to yices for testing
+func Get_mpz(z *Int)  *C.mpz_t {
+	return &z.i
+}
+
 // Finalizer - release the memory allocated to the mpz
 func intFinalize(z *Int) {
 	if z.init {
